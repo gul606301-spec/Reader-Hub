@@ -1,0 +1,405 @@
+# READER — Profil ve Ana Sayfa Güncelleme Brief
+
+## 1. Profil Ekranı
+
+### Amaç
+
+Profil ekranı yalnızca kullanıcı adı ve birkaç istatistiğin gösterildiği bir alan olmamalı.
+
+Profil, kullanıcının:
+
+- hesabını yönettiği
+- okuma hedeflerini gördüğü
+- günlük okuma kaydı yaptığı
+- okuma geçmişini takip ettiği
+- bildirim ve uygulama tercihlerini yönettiği
+
+ana kişisel merkez olmalı.
+
+---
+
+# PROFİL YAPISI
+
+## A. Kullanıcı Bilgileri
+
+Profilin üst bölümünde:
+
+- Profil fotoğrafı / avatar
+- İsim
+- Kullanıcı adı
+- E-posta
+- Telefon numarası
+- E-posta doğrulama durumu
+- Telefon doğrulama durumu
+
+yer almalı.
+
+Kullanıcı bu bilgileri düzenleyebilmeli.
+
+---
+
+## B. Profil Üst İstatistikleri
+
+Mevcut profil ekranındaki temel istatistik alanı korunabilir.
+
+Gösterilecek temel veriler:
+
+- Toplam kitap
+- Tamamlanan kitap
+- Mevcut streak
+
+Burada aynı veriler profilin farklı bölümlerinde tekrar gösterilmemeli.
+
+---
+
+# C. Günlük Okuma Alanı
+
+Ana sayfadaki mevcut günlük okuma kartı profil ekranına taşınmalı.
+
+Bu bölüm profil içerisinde kullanıcıya günlük okuma durumunu göstermeli.
+
+İçerik:
+
+- Günlük sayfa hedefi
+- Bugün okunan sayfa
+- Kalan sayfa
+- Hedef tamamlama oranı
+- Streak
+- Hızlı sayfa kaydı
+
+Kullanıcı bu bölümden doğrudan okuduğu sayfa sayısını manuel girebilmeli.
+
+Yeni kayıt mevcut günlük toplamın üzerine eklenmeli.
+
+Tek kayıt ile:
+
+- Günlük hedef
+- Kitap ilerlemesi
+- Streak
+- Günlük özet
+- Toplam okuma istatistikleri
+
+otomatik güncellenmeli.
+
+---
+
+## D. Şu An Okuyorum
+
+Profil içerisinde kullanıcının aktif olarak okuduğu kitap veya kitaplar gösterilmeli.
+
+Gösterilecek bilgiler:
+
+- Kitap kapağı
+- Kitap adı
+- Yazar
+- Okuma ilerlemesi
+- Tamamlanma yüzdesi
+- Kitap detayına gitme
+
+Birden fazla aktif kitap varsa kullanıcı bunlar arasında geçiş yapabilmeli.
+
+---
+
+## E. Bugünün Özeti
+
+Günlük özet profil içerisinde günlük okuma alanının altında bulunmalı.
+
+Gösterilebilecek temel veriler:
+
+- Bugün okunan sayfa
+- Bugün okunan süre
+- Tamamlanan günlük hedef
+- Günlük streak durumu
+
+Buradaki veriler başka alanlarda tekrar edilmemeli.
+
+---
+
+# F. Okuma Ayarları
+
+Mevcut “Okuma Ayarları” alanı korunmalı ancak tekrar eden bilgiler kaldırılmalı.
+
+İçerik:
+
+### Günlük Hedef
+- Günlük sayfa hedefini değiştirme
+
+### Okuma Hatırlatması
+- Aç / kapat
+- Saat seçme
+- Gün seçme
+
+### Okuma Tercihleri
+- Varsayılan hedef türü
+- Sayfa / dakika tercihi
+- Streak tercihleri
+
+“Toplam okuma” burada ayrı bir ayar satırı olarak bulunmamalı.
+
+Toplam okuma bir ayar değil, istatistik olduğu için **İstatistikler** bölümüne taşınmalı.
+
+---
+
+# G. İstatistikler
+
+Profil içerisinde ayrı bir istatistik alanı bulunmalı.
+
+İlk aşamada:
+
+- Toplam okunan kitap
+- Toplam okunan sayfa
+- Toplam okuma süresi
+- Mevcut streak
+- En uzun streak
+- Bu ay okunan kitap
+- Bu ay okunan sayfa
+
+İlerleyen sürümlerde:
+
+- Haftalık analiz
+- Aylık analiz
+- Yıllık analiz
+- Reading Calendar
+- Tür dağılımı
+- Yazar dağılımı
+
+eklenebilir.
+
+---
+
+# H. Hesap Ayarları
+
+Profil ekranı kullanıcının hesabıyla ilgili tüm temel işlemlere erişim sağlamalı.
+
+### Hesap Bilgileri
+- İsim değiştir
+- Kullanıcı adı değiştir
+- Profil fotoğrafı değiştir
+- E-posta değiştir
+- Telefon numarası değiştir
+
+### Güvenlik
+- Şifre değiştir
+- Şifremi unuttum
+- E-posta doğrulama
+- Telefon doğrulama
+- Aktif oturumlar
+
+### Hesap
+- Hesaptan çıkış
+- Hesabı sil
+
+---
+
+# I. Uygulama Tercihleri
+
+- Bildirim ayarları
+- Dil
+- Tema
+- Gizlilik ayarları
+- Veri ve senkronizasyon ayarları
+
+İlerleyen sürümlerde:
+
+- Kitaplık görünümü
+- Kitaplık rengi
+- Kitaplık modeli
+- Profil görünümü
+
+gibi kişiselleştirmeler buradan yönetilebilir.
+
+---
+
+# 2. Ana Sayfa
+
+## Amaç
+
+Ana sayfa artık kullanıcının profil bilgilerini ve detaylı günlük istatistiklerini tekrar eden bir ekran olmamalı.
+
+Ana sayfanın temel rolü:
+
+**Kitap dünyasında bugün ne oluyor?**
+
+sorusuna cevap vermek olmalı.
+
+Ana sayfa daha dinamik, keşif ve içerik odaklı hale getirilmeli.
+
+---
+
+# ANA SAYFA YAPISI
+
+## A. Kısa Günlük Durum
+
+Ana sayfanın üst kısmında yalnızca küçük bir günlük durum özeti bulunabilir.
+
+- Günlük hedef ilerlemesi
+- Streak
+- Aktif kitap
+
+Ancak profil ekranındaki detaylı günlük okuma paneli burada tekrar edilmemeli.
+
+Bu alan sadece hızlı bilgi vermeli.
+
+---
+
+# B. Yeni Çıkacak Kitaplar
+
+Ana sayfada ayrı bir bölüm bulunmalı.
+
+İçerik:
+
+- Yakında çıkacak kitaplar
+- Yeni yayımlanan kitaplar
+- Ön siparişte olan kitaplar
+- Yeniden basılan önemli kitaplar
+
+Kitaba dokunulduğunda kitap detay sayfasına gidilmeli.
+
+---
+
+# C. Kitap Haberleri
+
+Kitap dünyasına ait haber akışı oluşturulmalı.
+
+İçerik türleri:
+
+- Yeni kitap duyuruları
+- Kitap lansmanları
+- Yeni baskılar
+- Çeviri duyuruları
+- Ödül haberleri
+- Çok satanlar
+- Kitap uyarlamaları
+- Edebiyat dünyasındaki önemli gelişmeler
+
+---
+
+# D. Yazar Haberleri
+
+Yazarlarla ilgili ayrı içerikler gösterilebilmeli.
+
+- Yeni kitap duyuruları
+- Röportajlar
+- Söyleşiler
+- İmza günleri
+- Etkinlikler
+- Ödüller
+- Yeni projeler
+
+---
+
+# E. Yayınevi Haberleri
+
+Yayınevleriyle ilgili içerik alanı eklenmeli.
+
+- Yeni yayın programları
+- Yeni çıkan kitaplar
+- Yeni çeviriler
+- Özel baskılar
+- Kampanyalar
+- Etkinlikler
+- Yayınevi duyuruları
+
+---
+
+# F. Keşfet Alanı
+
+Ana sayfanın bir bölümü kitap keşfine ayrılmalı.
+
+İlerleyen aşamada:
+
+- Sana özel kitaplar
+- Trend kitaplar
+- Editör seçkileri
+- En çok eklenenler
+- En çok okunanlar
+- Yakında çıkacaklar
+- Yeni çıkanlar
+
+gibi bölümler eklenebilir.
+
+---
+
+# G. İçerik Kartları
+
+Ana sayfadaki haber ve içerikler standart kart yapısında gösterilmeli.
+
+Her kartta uygun olduğunda:
+
+- Görsel
+- Başlık
+- Kısa açıklama
+- İçerik tipi
+- Tarih
+- Yazar / yayınevi
+- İlgili kitap
+
+bulunmalı.
+
+Kart açıldığında detay sayfasına geçilmeli.
+
+---
+
+# 3. Tekrar Eden Alanların Kaldırılması
+
+Profil ve ana sayfa arasında aynı verilerin tekrar tekrar gösterilmemesi gerekiyor.
+
+## Profilde olacak
+
+- Detaylı günlük hedef
+- Sayfa girişi
+- Günlük özet
+- Şu an okuyorum
+- Okuma istatistikleri
+- Hesap bilgileri
+- Bildirim ayarları
+- Kullanıcı tercihleri
+
+## Ana sayfada olacak
+
+- Kısa günlük durum
+- Yeni çıkan kitaplar
+- Yakında çıkacak kitaplar
+- Yazar haberleri
+- Yayınevi haberleri
+- Kitap haberleri
+- Keşif içerikleri
+
+---
+
+# 4. Navigasyon
+
+Ana navigasyon şimdilik korunabilir:
+
+- Ana Sayfa
+- Kitaplığım
+- Kitap Ara
+- Profil
+
+Görev dağılımı net olmalı:
+
+**Ana Sayfa:** keşif ve güncel içerik  
+**Kitaplığım:** kişisel kitap koleksiyonu  
+**Kitap Ara:** kitap bulma  
+**Profil:** kullanıcı hesabı ve kişisel okuma merkezi
+
+---
+
+# 5. Öncelikli Geliştirme Sırası
+
+1. Mevcut günlük okuma alanını Profil'e taşı
+2. Profilde tekrar eden istatistikleri kaldır
+3. Profil yapısını hesap + okuma merkezi olarak yeniden düzenle
+4. Hesap bilgileri ve güvenlik ayarlarını ekle
+5. Ana sayfayı içerik ve keşif odaklı yeniden düzenle
+6. Yeni çıkan / yakında çıkacak kitaplar alanını ekle
+7. Kitap haberleri alanını ekle
+8. Yazar haberleri alanını ekle
+9. Yayınevi haberleri alanını ekle
+10. İçerik detay sayfası oluştur
+
+## Temel prensip
+
+**Profil kullanıcının kendisiyle, Ana Sayfa ise kitap dünyasıyla ilgili olmalı.**
+
+Bu ayrım korunursa uygulama büyüdükçe ekranlar birbirinin kopyasına dönüşmez.

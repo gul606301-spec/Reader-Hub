@@ -30,10 +30,15 @@ export type ReadingLog = {
 export type ReaderProfile = {
   name: string;
   email: string;
+  username?: string;
+  phone?: string;
+  emailVerified?: boolean;
+  phoneVerified?: boolean;
   dailyGoal: number;
   reminderEnabled: boolean;
   reminderTime: string;
   streak: number;
+  longestStreak?: number;
   todayPages: number;
   todayMinutes: number;
   todayPagesDate?: string;

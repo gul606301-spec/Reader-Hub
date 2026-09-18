@@ -68,6 +68,9 @@ export function ReaderProvider({ children }: { children: ReactNode }) {
     (details: Pick<ReaderProfile, 'name' | 'email'>) => {
       const nextProfile: ReaderProfile = {
         ...details,
+        username: details.name.toLocaleLowerCase('tr-TR').replace(/[^a-z0-9]+/g, ''),
+        emailVerified: false,
+        phoneVerified: false,
         dailyGoal: 20,
         reminderEnabled: true,
         reminderTime: '20:30',
@@ -75,6 +78,7 @@ export function ReaderProvider({ children }: { children: ReactNode }) {
         todayPages: 0,
         todayMinutes: 0,
         todayPagesDate: todayKey(),
+        longestStreak: 0,
       };
       setProfile(nextProfile);
       void persist(PROFILE_KEY, nextProfile);
@@ -193,6 +197,7 @@ export function ReaderProvider({ children }: { children: ReactNode }) {
         todayMinutes: isToday ? current.todayMinutes + normalizedMinutes : normalizedMinutes,
         todayPagesDate: today,
         streak: nextStreak,
+        longestStreak: Math.max(current.longestStreak ?? current.streak, nextStreak),
         lastActiveDate: goalReached ? today : previousDate,
       };
       void persist(PROFILE_KEY, next);
