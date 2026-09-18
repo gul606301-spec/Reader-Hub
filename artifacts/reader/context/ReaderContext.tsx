@@ -85,12 +85,13 @@ export function ReaderProvider({ children }: { children: ReactNode }) {
   const addToLibrary = useCallback((book: Book, status: ReadingStatus = 'want') => {
     setLibrary((current) => {
       if (current.some((item) => item.id === book.id)) return current;
+      const isFinished = status === 'finished';
       const next: LibraryBook[] = [
         ...current,
         {
           ...book,
           status,
-          progress: 0,
+          progress: isFinished ? book.pages : 0,
           minutes: 0,
           addedAt: new Date().toISOString(),
         },
@@ -102,7 +103,14 @@ export function ReaderProvider({ children }: { children: ReactNode }) {
 
   const updateBook = useCallback((id: string, changes: Partial<LibraryBook>) => {
     setLibrary((current) => {
-      const next = current.map((item) => (item.id === id ? { ...item, ...changes } : item));
+      const next = current.map((item) => {
+        if (item.id !== id) return item;
+        const normalizedChanges =
+          changes.status === 'finished'
+            ? { ...changes, progress: item.pages }
+            : changes;
+        return { ...item, ...normalizedChanges };
+      });
       void persist(LIBRARY_KEY, next);
       return next;
     });
