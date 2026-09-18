@@ -1,0 +1,24 @@
+kind = "mobile"
+previewPath = "/"
+title = "READER"
+description = "Kullanıcıların kitap arayıp kişisel kitaplık oluşturduğu, okuma durumunu ve ilerlemesini takip ettiği mobil okuma uygulaması. Günlük hedefler, streak ve temel istatistiklerle düzenli okumayı destekler."
+version = "1.0.0"
+id = "artifacts/reader"
+router = "expo-domain"
+
+[[services]]
+name = "expo"
+ensurePreviewReachable = "/status"
+paths = [ "/" ]
+localPort = 23284
+
+[services.development]
+run = "pnpm --filter @workspace/reader run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/reader", "run", "build" ]
+run = [ "pnpm", "--filter", "@workspace/reader", "run", "serve" ]
+
+[services.env]
+PORT = "23284"
+BASE_PATH = "/"
