@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Platform } from 'react-native';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { KeyboardProvider } from 'react-native-keyboard-controller';
@@ -51,9 +52,13 @@ export default function RootLayout() {
         <QueryClientProvider client={queryClient}>
           <ReaderProvider>
             <GestureHandlerRootView>
-              <KeyboardProvider>
+              {Platform.OS === 'web' ? (
                 <RootLayoutNav />
-              </KeyboardProvider>
+              ) : (
+                <KeyboardProvider>
+                  <RootLayoutNav />
+                </KeyboardProvider>
+              )}
             </GestureHandlerRootView>
           </ReaderProvider>
         </QueryClientProvider>

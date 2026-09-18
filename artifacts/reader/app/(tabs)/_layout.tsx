@@ -4,33 +4,19 @@ import { useColors } from '@/hooks/useColors';
 import { useReader } from '@/context/ReaderContext';
 import { Ionicons } from '@expo/vector-icons';
 import { BlurView } from 'expo-blur';
-import { isLiquidGlassAvailable } from 'expo-glass-effect';
 import { Tabs } from 'expo-router';
-import { NativeTabs } from 'expo-router/unstable-native-tabs';
-import { SymbolView } from 'expo-symbols';
 import AuthScreen from '@/components/AuthScreen';
+import { isLiquidGlassAvailable, NativeTabBar, TabSymbol } from '@/components/NativeTabBar';
+
+const nativeTabs = [
+  { name: 'index', label: 'Ana Sayfa', sf: { default: 'house', selected: 'house.fill' } },
+  { name: 'library', label: 'Kitaplığım', sf: { default: 'books.vertical', selected: 'books.vertical.fill' } },
+  { name: 'search', label: 'Kitap Ara', sf: { default: 'magnifyingglass', selected: 'magnifyingglass' } },
+  { name: 'profile', label: 'Profil', sf: { default: 'person', selected: 'person.fill' } },
+];
 
 function NativeTabLayout() {
-  return (
-    <NativeTabs>
-      <NativeTabs.Trigger name="index">
-        <NativeTabs.Trigger.Icon sf={{ default: 'house', selected: 'house.fill' }} />
-        <NativeTabs.Trigger.Label>Ana Sayfa</NativeTabs.Trigger.Label>
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="library">
-        <NativeTabs.Trigger.Icon sf={{ default: 'books.vertical', selected: 'books.vertical.fill' }} />
-        <NativeTabs.Trigger.Label>Kitaplığım</NativeTabs.Trigger.Label>
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="search">
-        <NativeTabs.Trigger.Icon sf={{ default: 'magnifyingglass', selected: 'magnifyingglass' }} />
-        <NativeTabs.Trigger.Label>Kitap Ara</NativeTabs.Trigger.Label>
-      </NativeTabs.Trigger>
-      <NativeTabs.Trigger name="profile">
-        <NativeTabs.Trigger.Icon sf={{ default: 'person', selected: 'person.fill' }} />
-        <NativeTabs.Trigger.Label>Profil</NativeTabs.Trigger.Label>
-      </NativeTabs.Trigger>
-    </NativeTabs>
-  );
+  return <NativeTabBar tabs={nativeTabs} />;
 }
 
 function ClassicTabLayout() {
@@ -60,7 +46,7 @@ function ClassicTabLayout() {
           ),
       }}
     >
-      <Tabs.Screen name="index" options={{ title: 'Ana Sayfa', tabBarIcon: ({ color, size }) => Platform.OS === 'ios' ? <SymbolView name="house" tintColor={color} size={size} /> : <Ionicons name="home-outline" size={size} color={color} /> }} />
+      <Tabs.Screen name="index" options={{ title: 'Ana Sayfa', tabBarIcon: ({ color, size }) => Platform.OS === 'ios' ? <TabSymbol name="house" tintColor={color} size={size} /> : <Ionicons name="home-outline" size={size} color={color} /> }} />
       <Tabs.Screen name="library" options={{ title: 'Kitaplığım', tabBarIcon: ({ color, size }) => <Ionicons name="library-outline" size={size} color={color} /> }} />
       <Tabs.Screen name="search" options={{ title: 'Kitap Ara', tabBarIcon: ({ color, size }) => <Ionicons name="search-outline" size={size} color={color} /> }} />
       <Tabs.Screen name="profile" options={{ title: 'Profil', tabBarIcon: ({ color, size }) => <Ionicons name="person-outline" size={size} color={color} /> }} />

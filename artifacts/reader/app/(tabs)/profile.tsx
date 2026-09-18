@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { Alert, Modal, Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View } from 'react-native';
+import { Modal, Pressable, ScrollView, StyleSheet, Switch, Text, TextInput, View } from 'react-native';
 import { useColors } from '@/hooks/useColors';
 import { useReader } from '@/context/ReaderContext';
 import { formatMinutes } from '@/data/catalog';
@@ -9,6 +9,7 @@ import { LibraryBook, ReaderProfile } from '@/data/catalog';
 import { DailyReadingModal } from '@/components/DailyReadingModal';
 import { Cover, PrimaryButton, ProgressBar, Screen, SectionTitle, Wordmark } from '@/components/ReaderUI';
 import { KeyboardAwareScrollViewCompat } from '@/components/KeyboardAwareScrollViewCompat';
+import { showAlert } from '@/utils/platform-alert';
 
 export default function ProfileScreen() {
   const colors = useColors();
@@ -37,7 +38,7 @@ export default function ProfileScreen() {
         : undefined;
     recordReading(pages, bookId);
     setPagesValue('');
-    Alert.alert('Kaydedildi', `${pages} sayfa bugünkü toplamına eklendi.`);
+    showAlert('Kaydedildi', `${pages} sayfa bugünkü toplamına eklendi.`);
   };
   const openBook = (book: LibraryBook) =>
     router.push({
