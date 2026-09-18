@@ -1,15 +1,17 @@
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
-import React from 'react';
+import React, { useState } from 'react';
 import { Pressable, StyleSheet, Switch, Text, View } from 'react-native';
 import { useColors } from '@/hooks/useColors';
 import { useReader } from '@/context/ReaderContext';
 import { formatMinutes } from '@/data/catalog';
+import { DailyReadingModal } from '@/components/DailyReadingModal';
 import { PrimaryButton, Screen, SectionTitle, Wordmark } from '@/components/ReaderUI';
 
 export default function ProfileScreen() {
   const colors = useColors();
-  const { profile, library, updateProfile, signOut } = useReader();
+  const { profile, library, readingLogs, updateProfile, recordReading, updateReadingLog, signOut } = useReader();
+  const [isGoalModalVisible, setGoalModalVisible] = useState(false);
   if (!profile) return null;
   const finished = library.filter((book) => book.status === 'finished').length;
   const totalPages = library.reduce((sum, book) => sum + book.progress, 0);
@@ -28,10 +30,7 @@ export default function ProfileScreen() {
       </View>
       <SectionTitle title="Okuma ayarları" />
       <View style={[styles.settingsCard, { backgroundColor: colors.card }]}>
-        <SettingRow icon="flag-outline" title="Günlük hedef" value={`${profile.dailyGoal} sayfa`} onPress={() => {
-          const nextGoal = profile.dailyGoal === 20 ? 30 : profile.dailyGoal === 30 ? 45 : 20;
-          updateProfile({ dailyGoal: nextGoal });
-        }} />
+        <SettingRow icon="flag-outline" title="Günlük hedef" value={`${profile.dailyGoal} sayfa`} onPress={() => setGoalModalVisible(true)} />
         <View style={[styles.divider, { backgroundColor: colors.border }]} />
         <View style={styles.settingRow}>
           <View style={[styles.settingIcon, { backgroundColor: colors.secondary }]}><Ionicons name="notifications-outline" size={18} color={colors.primary} /></View>
@@ -46,6 +45,17 @@ export default function ProfileScreen() {
         <View style={styles.tipText}><Text style={[styles.tipTitle, { color: colors.foreground }]}>Küçük adımlar, büyük hikâyeler.</Text><Text style={[styles.tipBody, { color: colors.mutedForeground }]}>Hedefini düşük tutmak sorun değil. Önemli olan her gün geri dönmek.</Text></View>
       </View>
       <PrimaryButton label="Oturumu kapat" onPress={signOut} />
+      <DailyReadingModal
+        visible={isGoalModalVisible}
+        profile={profile}
+        activeBooks={library.filter((book) => book.status === 'reading')}
+        allBooks={library}
+        logs={readingLogs}
+        onClose={() => setGoalModalVisible(false)}
+        onGoalChange={(goal) => updateProfile({ dailyGoal: goal })}
+        onSaveReading={(pages, bookId) => recordReading(pages, bookId)}
+        onEditLog={updateReadingLog}
+      />
     </Screen>
   );
 }

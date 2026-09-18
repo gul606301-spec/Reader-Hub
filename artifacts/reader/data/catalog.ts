@@ -18,6 +18,15 @@ export type LibraryBook = Book & {
   lastReadAt?: string;
 };
 
+export type ReadingLog = {
+  id: string;
+  date: string;
+  pages: number;
+  minutes: number;
+  bookId?: string;
+  createdAt: string;
+};
+
 export type ReaderProfile = {
   name: string;
   email: string;
@@ -27,6 +36,7 @@ export type ReaderProfile = {
   streak: number;
   todayPages: number;
   todayMinutes: number;
+  todayPagesDate?: string;
   lastActiveDate?: string;
 };
 

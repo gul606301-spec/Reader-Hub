@@ -1,0 +1,115 @@
+## Günlük Hedef & Hızlı Okuma Kaydı
+
+### Amaç
+
+Kullanıcının günlük okuma hedefini kolayca belirleyebilmesi ve günlük okuduğu sayfa miktarını mümkün olan en az adımla kaydedebilmesi.
+
+## 1. Günlük Hedef Alanı
+
+Profil > Okuma Ayarları bölümündeki **Günlük Hedef** satırı tıklanabilir hale getirilmeli.
+
+Tıklandığında kullanıcı:
+
+- Günlük sayfa hedefini görebilmeli
+- Hedefi manuel değiştirebilmeli
+- Yeni hedefi kaydedebilmeli
+
+Bu alanın temel amacı **hedef ayarlamak** olmalı.
+
+---
+
+## 2. Günlük Okuma Kaydı Hedef Ayarından Ayrılmalı
+
+Kullanıcının günlük kaç sayfa okuduğunu kaydetmek için Günlük Hedef ayarlarına girmesi gerekmemeli.
+
+Ana Sayfa ve/veya Profil ekranında doğrudan kullanılabilecek bir **hızlı kayıt alanı** bulunmalı.
+
+Kullanıcı:
+
+**Bugün okunan sayfa: [  ]**
+
+alanına sayıyı manuel yazıp tek dokunuşla kaydedebilmeli.
+
+Akış:
+
+**Sayfa sayısını yaz → Kaydet**
+
+Ek ekran açılması zorunlu olmamalı.
+
+---
+
+## 3. Günlük Hedef Alanından da Kayıt Yapılabilmeli
+
+Kullanıcı Günlük Hedef detayına girerse aynı ekranda:
+
+- Günlük hedef
+- Bugün okunan
+- Kalan
+- Hedef tamamlama oranı
+
+görülebilmeli.
+
+Buradan da manuel okuma kaydı yapılabilmeli.
+
+Böylece iki kullanım yolu olacak:
+
+**Hızlı kullanım:** Ana ekrandan direkt sayfa gir ve kaydet.
+
+**Detaylı kullanım:** Günlük Hedef'e gir, ilerlemeyi gör ve kayıt yap.
+
+---
+
+## 4. Kullanıcıyı Yormayan Kayıt Sistemi
+
+Günlük kayıt mümkün olduğunca az etkileşim gerektirmeli.
+
+- Sayısal klavye otomatik açılmalı.
+- Kullanıcı yalnızca sayı girmeli.
+- Tek dokunuşla kaydedilmeli.
+- Gereksiz onay ekranları olmamalı.
+- Kayıttan sonra kısa bir başarı geri bildirimi gösterilmeli.
+- Aynı gün içerisinde tekrar kayıt yapılabilmeli.
+- Yeni kayıtların mevcut günlük toplamın üzerine eklenip eklenmeyeceği arayüzde net olmalı.
+- Yanlış kayıt düzenlenebilmeli.
+
+---
+
+## 5. Kitapla İlişkilendirme
+
+Kullanıcı aktif olarak bir kitap okuyorsa hızlı okuma kaydı mümkün olduğunca otomatik olarak o kitapla ilişkilendirilmeli.
+
+Birden fazla aktif kitap varsa kullanıcı hangi kitap için kayıt yaptığını kolayca seçebilmeli.
+
+Böylece tek kayıtla:
+
+- Günlük okunan sayfa
+- Kitabın ilerlemesi
+- Günlük hedef ilerlemesi
+- Günlük okuma özeti
+- Streak
+
+güncellenebilmeli.
+
+Kullanıcının aynı bilgiyi iki farklı yerde tekrar girmesi istenmemeli.
+
+---
+
+## 6. Hedef Tamamlama
+
+Günlük okunan toplam sayfa günlük hedefe ulaştığında:
+
+- Günlük hedef tamamlandı olarak işaretlenmeli.
+- Streak otomatik güncellenmeli.
+- Ana Sayfa ilerleme göstergesi güncellenmeli.
+- Profildeki günlük hedef bilgisi güncellenmeli.
+
+Hesaplamalar kullanıcıdan ekstra işlem istemeden otomatik yapılmalı.
+
+## Öncelikli Düzeltmeler
+
+1. Profildeki **Günlük Hedef** satırını çalışır hale getir.
+2. Günlük hedefin manuel değiştirilebilmesini sağla.
+3. Ana ekrana **hızlı günlük sayfa girişi** ekle.
+4. Günlük Hedef detayından da sayfa girişi yapılabilsin.
+5. Tek kayıtla kitap ilerlemesi + günlük hedef + streak verilerini güncelle.
+6. Aynı verinin kullanıcıdan birden fazla kez girilmesini engelle.
